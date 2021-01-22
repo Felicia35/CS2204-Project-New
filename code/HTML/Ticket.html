@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ticket Page</title>
+    <link rel="stylesheet" href="../CSS/TicketPage.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../CSS/CommonCSS.css" type="text/css" media="all">
+    <script type="text/javascript" src="../JS/TicketPage.js"></script>
+    <script src="../JS/cinemas.js"></script>
+    <script type="text/javascript" src="../JS/movies.js"></script>
+</head>
+<body>
+<!--page header-->
+<header>
+    <h1>CITY <img class="headImg" src="../Picture/filmreel.png" alt="logo" title="filmreel"> CINEMA</h1>
+</header>
+
+<!--page navigation-->
+<nav>
+    <ul>
+        <li>
+            <a href="Home.html">HOME</a >
+        </li>
+        <li>
+            <a href="NowShowing.html">NOW SHOWING</a >
+        </li>
+        <li>
+            <a href="Ticket.html" class="disable">TICKET</a >
+        </li>
+    </ul>
+</nav>
+
+<br>
+
+<!-- Page Content -->
+<div id="information">
+    <form>
+        <input class="info" id="info1" name = "cinemaSection" type="text" value="Cinema - Festival Walk" disabled>
+        <input class="info" id="info2" name = "nameSection" type="text" value="Movie - Big Buck" disabled>
+        <input class="info" id="info3" name = "timeSection" type="text" value="19 March, Tue - 9:00 AM" disabled>
+        <input class="info" id="info4" name = "houseSection" type="text" value="House 4" disabled>
+    </form>
+</div>
+
+<br>
+
+<div class="container">
+    <table>
+        <caption>SCREEN</caption>
+        <tbody>
+        <tr>
+            <th>A</th>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+
+        <tr>
+            <th>B</th>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+
+        <tr>
+            <th>C</th>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+
+        <tr>
+            <th>D</th>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<br><br><br><br>
+
+<div>
+    <form action="Print.html">
+        <fieldset>
+            <legend>Seat Booked</legend>
+            <!--input id="seats" name="seatSection"-->
+            <input type="submit" value="confirm">
+        </fieldset>
+    </form>
+</div>
+
+<br>
+
+<!--page footer-->
+<footer>
+    <p>Footer: @Copyright of resources belong to corresponding copyright owners - fair use for education purpose | <a href="Home.html">Home | </a><a href="Design.html">Design</a></p>
+</footer>
+</body>
+</html>

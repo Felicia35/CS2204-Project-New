@@ -1,0 +1,59 @@
+/*animation*/
+@keyframes headerimg {
+    0% {left:0px;}
+    50% {left:46%;}
+    100%{left:0px;}
+}
+
+a{
+    text-decoration: none;
+}
+
+a:hover{
+    color: bisque;
+}
+
+header{
+    margin: 33px;
+    border-style: solid;
+    border-color: grey;
+    border-width: 0.8px;
+    border-radius: 25px;
+    text-align: center;
+    height: 150px;
+}
+
+.headImg{
+    position: relative;
+    animation-name:headerimg;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+}
+
+nav{
+    position: fixed;
+    background-color: aqua;
+    vertical-align: middle;
+    width: 200px;
+    height: 80px;
+    border-style: solid;
+    border-color: grey;
+    border-width: 0.8px;
+    border-radius: 25px;
+    z-index: 999;
+}
+
+
+
+.disable{
+    pointer-events: none;
+}
+
+footer{
+    margin: 33px;
+    border-style: solid;
+    border-color: grey;
+    border-width: 0.8px;
+    border-radius: 25px;
+    text-align: center;
+}

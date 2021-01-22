@@ -1,0 +1,66 @@
+
+#selection{
+    margin: 33px;
+    border-style: solid;
+    border-color: grey;
+    border-width: 0.8px;
+    border-radius: 25px;
+    text-align: center;
+}
+
+fieldset{
+    border: 0;
+    padding: 20px;
+}
+
+#location{
+    height: 1800px;
+    margin: 33px;
+    border-style: solid;
+    border-color: grey;
+    border-width: 0.8px;
+    border-radius: 25px;
+    text-align: center;
+
+}
+
+#location div img{
+    width: 600px;
+    height: 500px;
+    float: left;
+}
+
+#location h2{
+    font-style: italic;
+    font-family: AppleSystemUIFont;
+}
+
+#location div{
+    clear: both;
+    padding-left: 30px;
+    padding-top: 40px;
+}
+
+#location p{
+    font-weight: bold;
+}
+
+.text{
+    float: left;
+    margin-top: 100px;
+    text-align: center;
+    padding-top: 100px;
+    width: 300px;
+}
+
+input:focus{
+    background: lightsteelblue;
+    color: blue;
+}
+
+select:focus{
+    background: lightsteelblue;
+    color: blue;
+}
+
+

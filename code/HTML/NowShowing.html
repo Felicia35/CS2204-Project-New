@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Now Showing Page</title>
+    <link rel="stylesheet" href="../CSS/NowShowingCSS.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../CSS/CommonCSS.css" type="text/css" media="all">
+    <script type="text/javascript" src="../JS/NowShowing.js"></script>
+    <script src="../JS/cinemas.js"></script>
+    <script type="text/javascript" src="../JS/movies.js"></script>
+</head>
+<body>
+    <!--page header-->
+    <header>
+            <h1>CITY <img class="headImg" src="../Picture/filmreel.png" alt="logo" title="filmreel"> CINEMA</h1>
+    </header>
+
+    <!--page navigation-->
+    <nav>
+        <ul>
+            <li>
+                <a href="Home.html">HOME</a >
+            </li>
+            <li>
+                <a href="NowShowing.html" class="disable">NOW SHOWING</a >
+            </li>
+            <li>
+                <a href="Ticket.html">TICKET</a >
+            </li>
+        </ul>
+    </nav>
+
+    <br>
+    <!-- Page Content -->
+    <section id = "selection">
+        <form action = "Ticket.html" id="formCinema">
+            <p>
+                Select Cinema:
+                <select id="selectCinema" onchange=changeCinema(this.value)>
+                    <!--select id="selectCinema" name = "cinemaSection" onchange=changeCinema(this.value)-->
+                </select>
+            </p>
+        </form>
+
+        <br>
+
+        <div id="reservation">
+        </div>
+    </section>
+
+    <section id="location">
+        <h2>Cinema locations</h2>
+        <div>
+            <div class="text">
+                <p>Name: City Cinema</p>
+                <p>Address: Level UG,</p>
+                <p>Festival Walk,</p>
+                <p>80 Tat Chee Avenue,</p>
+                <p>Kowloon Tong,</p>
+                <p>Kowloon</p>
+            </div>
+            <img src="../Picture/CityCinemaAddress.png" alt="Your browser does not support the picture tag." title="Map Address">
+        </div>
+
+        <br>
+
+        <div>
+            <div class="text">
+                <p>Name: MCL CINEMA</p>
+                <p>Address: Telford Gardens,</p>
+                <p>No. 33 Wai Yip Street,</p>
+                <p>Kowloon Bay,</p>
+                <p>Kowloon</p>
+            </div>
+            <img src="../Picture/MCLCinema.png" alt="Your browser does not support the picture tag." title="Map Address">
+        </div>
+
+        <br>
+
+        <div>
+            <div class="text">
+                <p>Name: UA Cine Moko</p>
+                <p>Address: L4,</p>
+                <p>MOKO,</p>
+                <p>193 Prince Edward Road</p>
+            </div>
+            <img src="../Picture/UACinema.png" alt="Your browser does not support the picture tag." title="Map Address">
+        </div>
+    </section>
+
+    <!--page footer-->
+    <footer>
+        <p>Footer: @Copyright of resources belong to corresponding copyright owners - fair use for education purpose |
+            <a href="Home.html">Home | </a>
+            <a href="Design.html">Design</a>
+        </p>
+    </footer>
+
+<script>
+    cinemas = getCinemas();
+    for (var i = 0; i < cinemas.length; i++){
+        var cinema = cinemas[i];
+        var content = document.createElement("option");
+        var text = document.createTextNode(cinema.branchName);
+        content.value = cinema.branchName;
+        content.appendChild(text);
+        document.getElementById("selectCinema").appendChild(content);
+    }
+    //最上面的电影院的下拉选项
+
+    var allMovies = getMovies();
+    var targetCinema;
+    var targetMovies;
+    var length;
+
+    function changeCinema(cinemaValue) {
+
+        //所有的电影院一一遍历,找到此次选择的电影院
+        for (var i = 0; i < cinemas.length; i++) {
+            if (cinemas[i].branchName == cinemaValue) {
+                targetCinema = cinemas[i];
+                targetMovies = cinemas[i].movies;
+            }
+        }
+
+        //reservation是电影院下面的选时间区域，先清空
+        document.getElementById("reservation").innerHTML = null;
+
+        //遍历这个电影院的每一个movie
+        for (var j = 0; j < targetMovies.length; j++){
+
+            //每个电影有自己的form和form id
+            var form = document.createElement("form");
+            form.action = "Ticket.html";
+            form.id = "formMovie" + j;
+            var field = document.createElement("fieldset");
+            form.appendChild(field);
+            document.getElementById("reservation").appendChild(form);
+
+            //movie image
+            var image = document.createElement("img");
+            image.src = "../Picture/" + allMovies[targetMovies[j].id - 1].thumbnail;
+            image.alt = "Your browser does not support the picture tag.";
+            image.title = allMovies[targetMovies[j].id - 1].name;
+            field.appendChild(image);
+
+            //movie name
+            var Input = document.createElement("input");
+            Input.type = "text";
+            Input.value = allMovies[targetMovies[j].id - 1].name;
+            Input.name = "nameSection";
+            //Input.disabled = "disabled";
+            field.appendChild(Input);
+
+            //movie time
+            var selection = document.createElement("select");
+            selection.id = "selectTime";////////
+            field.appendChild(selection);
+
+            length = targetMovies[j].shows.length;
+            for (var k = 0; k < targetMovies[j].shows.length; k++){
+                var Option = document.createElement("option");
+                var optionText = document.createTextNode(targetMovies[j].shows[k].datetime);
+                Option.value = targetMovies[j].shows[k].index;
+                Option.appendChild(optionText);
+                selection.appendChild(Option);
+
+            }
+
+            //buy button
+            var submitButton = document.createElement("input");
+            field.appendChild(submitButton);
+            submitButton.id = "buy" + j;////////
+            submitButton.type = "submit";
+            submitButton.value = "Buy Ticket";
+            submitButton.onclick = function (){
+
+                //当前time对应的idx
+                var idx = this.previousElementSibling.value;
+
+                window.localStorage.setItem("indexSection", idx);
+                document.getElementById("formCinema").submit();
+            }
+
+        }
+    }
+    changeCinema(cinemas[0].branchName);
+</script>
+</body>
+</html>

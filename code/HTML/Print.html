@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Print Page</title>
+    <link rel="stylesheet" href="../CSS/PrintPageCSS.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../CSS/CommonCSS.css" type="text/css" media="all">
+    <style media="print">
+        nav, header, footer{
+            display: none;
+        }
+
+        #main{
+            position: relative;
+        }
+        .ticket{
+            page-break-after: always;
+            text-align: center;
+        }
+    </style>
+    <script type="text/javascript" src="../JS/PrintPage.js"></script>
+</head>
+<body>
+    <!--page header-->
+    <header>
+        <h1>CITY <img class="headImg" src="../Picture/filmreel.png" alt="logo" title="filmreel"> CINEMA</h1>
+    </header>
+
+    <!--page navigation-->
+    <nav>
+        <ul>
+            <li>
+                <a href="Home.html">HOME</a >
+            </li>
+            <li>
+                <a href="NowShowing.html">NOW SHOWING</a >
+            </li>
+            <li>
+                <a href="Ticket.html">TICKET</a >
+            </li>
+        </ul>
+    </nav>
+
+    <br>
+
+    <!-- Page Content -->
+    <div id="main">
+        <div class="ticket">
+            <span>
+            <p>Cinema: <input type="text" value="Festival Walk" ><br/></p>
+            <p>Movie: <input type="text" value="Casablance" ><br/></p>
+            <p>Date Time: <input type="text" value="19 March 2020 Tue - 9:00am" ><br/></p>
+            </span>
+            <span>
+            <p>House No.: <input type="text" value="4" ><br/></p>
+            <p>Seat: <input type="text" value="A1" ><br/></p>
+            </span>
+        </div>
+
+        <br>
+
+        <div class="ticket">
+            <span>
+            <p>Cinema: <input type="text" value="Festival Walk" ><br/></p>
+            <p>Movie: <input type="text" value="Nature" ><br/></p>
+            <p>Date Time: <input type="text" value="20 March 2020 Fri - 9:00pm" ><br/></p>
+            </span>
+            <span>
+            <p>House No.: <input type="text" value="1" ><br/></p>
+            <p>Seat: <input type="text" value="A2" ><br/></p>
+            </span>
+        </div>
+    </div>
+
+    <br>
+
+    <!--page footer-->
+    <footer>
+        <p>Footer: @Copyright of resources belong to corresponding copyright owners - fair use for education purpose | <a href="Home.html">Home | </a><a href="Design.html">Design</a></p>
+    </footer>
+</body>
+</html>

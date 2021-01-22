@@ -1,0 +1,39 @@
+#main{
+    margin: 33px;
+    border-style: solid;
+    border-color: grey;
+    border-width: 0.8px;
+    border-radius: 25px;
+    text-align: center;
+    clear: both;
+}
+
+footer{
+    margin: 33px;
+    border-style: solid;
+    border-color: grey;
+    border-width: 0.8px;
+    border-radius: 25px;
+    text-align: center;
+}
+
+.ticket{
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-style: solid;
+    border-color: grey;
+    border-width: 0.8px;
+    border-radius: 25px;
+    text-align: center;
+    height: 250px;
+}
+
+
+span{
+    float: left;
+    width: 50%;
+}
+
+

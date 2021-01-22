@@ -1,0 +1,69 @@
+
+.bar{
+    margin: 33px;
+    border-style: solid;
+    border-color: grey;
+    border-width: 0.8px;
+    border-radius: 25px;
+    text-align: center;
+    height: 620px;
+}
+
+#main{
+    clear: both;
+    text-align: center;
+    margin: 33px;
+    border-style: solid;
+    border-color: grey;
+    border-width: 0.8px;
+    border-radius: 25px;
+    height: 900px;
+}
+
+dd{
+    clear: both;
+    width: 500px;
+    height: 150px;
+    border-style: solid;
+    border-color: grey;
+    border-width: 0.8px;
+    border-radius: 25px;
+    position: relative;
+}
+#main img{
+    float: left;
+    cursor: pointer;
+    width: 100px;
+    height: 80px;
+    vertical-align: middle;
+    }
+.text{
+    float: left;
+    font-weight: bold;
+}
+
+#nowShowing{
+    text-align: center;
+    float: left;
+    width: 50%;
+    box-shadow: 10px 10px 5px #888888;
+}
+
+#upComing{
+    text-align: center;
+    float: left;
+    width: 50%;
+    box-shadow: 10px 10px 5px #888888;
+}
+
+
+.title{
+    font-family: Arial;
+    font-style: italic;
+    font-size: 2em;
+}
+
+#video{
+    width: 900px;
+    height: 500px;
+}

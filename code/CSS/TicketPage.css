@@ -1,0 +1,125 @@
+
+.container{
+    display: flex;
+    width: 260px;
+    height: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#information{
+    margin-top: 50px;
+    float: left;
+    width: 50%;
+}
+
+input:focus{
+    background: lightsteelblue;
+    color: blue;
+}
+
+.info{
+    margin-left: 200px;
+    float: none;
+    width: 50%;
+    height: 60px;
+}
+
+div div:nth-child(1){
+    width: 50px;
+    height: 50px;
+    margin: 0px;
+    text-align: center;
+    line-height: 50px;
+}
+
+div div:nth-child(2){
+    width: 205px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+}
+
+div div:nth-child(5n+3){
+    width: 50px;
+    height: 50px;
+    margin: 0px;
+    text-align: center;
+    line-height: 50px;
+}
+
+div div:nth-child(5n + 4){
+    width: 50px;
+    height: 50px;
+    border-style: solid;
+    border-color: black;
+    border-width: 0.1px;
+    margin: 0px;
+    text-align: center;
+    line-height: 50px;
+}
+
+div div:nth-child(5n + 4):hover{
+    background-color: aqua;
+}
+
+div div:nth-child(5n + 5){
+    width: 50px;
+    height: 50px;
+    border-style: solid;
+    border-color: black;
+    border-width: 0.1px;
+    margin: 0px;
+    text-align: center;
+    line-height: 50px;
+}
+
+div div:nth-child(5n + 5):hover{
+    background-color: aqua;
+}
+
+div div:nth-child(5n + 6){
+    width: 50px;
+    height: 50px;
+    border-style: solid;
+    border-color: black;
+    border-width: 0.1px;
+    margin: 0px;
+    text-align: center;
+    line-height: 50px;
+}
+
+div div:nth-child(5n + 6):hover{
+    background-color: aqua;
+}
+
+div div:nth-child(5n + 7){
+    width: 50px;
+    height: 50px;
+    border-style: solid;
+    border-color: black;
+    border-width: 0.1px;
+    margin: 0px;
+    text-align: center;
+    line-height: 50px;
+}
+
+div div:nth-child(5n + 7):hover{
+    background-color: aqua;
+}
+
+td{
+    width: 50px;
+    height: 50px;
+    border-style: solid;
+    border-color: black;
+    border-width: 0.1px;
+    margin: 0px;
+    text-align: center;
+    line-height: 50px;
+    background-color: white;
+}
+
+td:hover{
+    background-color: aqua;
+}
